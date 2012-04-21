@@ -51,4 +51,35 @@ function parse_git_branch() {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+#PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+
+#PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
+#Light blue/near turquise
+#32 33
+#37 38 39
+#43 44 45
+#49 50 51
+
+#Purple
+#92 93
+#98 99
+#104 105
+
+#Light blue/green
+#110 111
+#116 117
+#122 123
+
+C1=$(tput setaf 32)
+C2=$(tput setaf 92)
+C3=$(tput setaf 104)
+C4=$(tput setaf 111)
+C5=$(tput setaf 117)
+C6=$(tput setaf 176)
+C7=$(tput setaf 244)
+
+
+PS1="[\[${BOLD}${C1}\]\u\[$C2\]@\[$C3\]\h\[$WHITE\]:\[$C4\]\W\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" \[$C7\](\")\$(parse_git_branch)\[$C7\])\[$WHITE\]]\n\$ \[$RESET\]"
+
+
