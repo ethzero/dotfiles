@@ -9,3 +9,38 @@ Thumbs.db
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
+
+# Default OS X user folders and files
+Desktop
+Documents
+Downloads
+Dropbox
+Library
+Movies
+Music
+Pictures
+Public
+.Trash/
+.CFUserTextEncoding
+
+# Common Unix user folders and files
+.ssh/
+.Xauthority
+.bash_history
+.cups/
+.lesshst
+#	.htoprc
+#	.local/
+#	.ssh.zip
+#	.subversion/
+#	.viminfo
+
+# OpenOffice
+.crash_report*
+
+.dropbox/
+
+
+# My git repos
+git
+
