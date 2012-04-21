@@ -29,16 +29,21 @@ Public
 .bash_history
 .cups/
 .lesshst
-#	.htoprc
-#	.local/
-#	.ssh.zip
-#	.subversion/
-#	.viminfo
 
-# OpenOffice
+# OpenOffice droppings
 .crash_report*
 
+# Personal stuff
 .dropbox/
+.config/
+.dvdcss/
+.eaglerc
+.fontconfig/
+.gdb_history
+.htoprc
+.idm/
+.subversion/
+.viminfo
 
 
 # My git repos
