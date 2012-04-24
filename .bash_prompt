@@ -49,10 +49,12 @@ export RESET
 #PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 #PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
 
-C1=$(tput setaf 68)
-C2=$(tput setaf 250)
-C3=$(tput setaf 140)
+C1=$(tput setaf 111)
+C2=$(tput setaf 189)
+C3=$(tput setaf 147)
+
 C4=$(tput setaf 111)
+C4=$(tput setaf 79)
 C5=$(tput setaf 117)
 C6=$(tput setaf 209)
 C7=$(tput setaf 174)
@@ -66,5 +68,5 @@ function parse_git_branch() {
 	if [ $RETURN ]; then echo -n "::$RETURN"; fi
 }
 
-PS1="\[${BOLD}${C1}\]\u\[$C2\]@\[$C3\]\h\[$WHITE\]:\[$C4\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo )\$(parse_git_branch)\[$WHITE\]$\[$RESET\] "
+PS1="\[${C1}\]\u\[$C2\]@\[$C3\]\h\[$WHITE\]:\[$C4\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo )\$(parse_git_branch)\[$WHITE\]$\[$RESET\] "
 
