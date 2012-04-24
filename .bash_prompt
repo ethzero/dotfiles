@@ -49,12 +49,12 @@ export RESET
 #PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 #PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
 
-C1=$(tput setaf 111)
+C1=$(tput setaf 169)
 C2=$(tput setaf 189)
 C3=$(tput setaf 147)
 
 C4=$(tput setaf 111)
-C4=$(tput setaf 79)
+
 C5=$(tput setaf 117)
 C6=$(tput setaf 209)
 C7=$(tput setaf 174)

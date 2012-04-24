@@ -38,15 +38,5 @@ Sites
 .dropbox/
 .config/
 .dvdcss/
-.eaglerc
-.fontconfig/
-.gdb_history
-.htoprc
-.idm/
-.subversion/
-.viminfo
-
-
-# My git repos
 git
 
