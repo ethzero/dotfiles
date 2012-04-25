@@ -23,14 +23,18 @@ complete -o "nospace" -W "Finder Dock Mail Safari iTunes iCal Address\ Book Syst
 umask 0002
 export CLICOLOR=1;
 
-if [ -f `brew --prefix`/Library/Contributions/brew_bash_completion.sh ]; then
-	source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+if [[ $OSTYPE = darwin* ]]; then
+	if [ -f `brew --prefix`/Library/Contributions/brew_bash_completion.sh ]; then
+		source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+	fi
+	if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
+		source `brew --prefix`/etc/bash_completion.d/git-completion.bash
+	fi
+	if [ -f `brew --prefix grc`/etc/grc.bashrc ]; then
+		source `brew --prefix grc`/etc/grc.bashrc
+	fi
+elif [[ $OSTYPE = linux* ]]; then
+	if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+		source /usr/local/etc/bash_completion.d/git-completion.bash
+	fi
 fi
-if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
-	source `brew --prefix`/etc/bash_completion.d/git-completion.bash
-fi
-if [ -f `brew --prefix grc`/etc/grc.bashrc ]; then
-	source `brew --prefix grc`/etc/grc.bashrc
-fi
-
-
