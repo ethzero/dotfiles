@@ -55,9 +55,10 @@ C3=$(tput setaf 147)
 
 C4=$(tput setaf 111)
 
-C5=$(tput setaf 117)
-C6=$(tput setaf 209)
-C7=$(tput setaf 174)
+C5=$(tput setaf 77)
+C5=$(tput setaf 247)
+	C6=$(tput setaf 209)
+C7=$(tput setaf 154)
 
 function parse_git_dirty() {
 	[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
@@ -65,8 +66,12 @@ function parse_git_dirty() {
 
 function parse_git_branch() {
 	RETURN=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"`
-	if [ $RETURN ]; then echo -n "::$RETURN"; fi
+#	So, you can see what I'm trying to do here, a light pepper of colour around the '::'
+#	On a *Mac* you get horrible line wrapping; I'm done beating my head up over this one...
+#	if [ $RETURN ]; then printf "\e$WHITE::\e$C7$RETURN"; fi
+	if [ $RETURN ]; then printf "::$RETURN"; fi
 }
 
-PS1="\[${C1}\]\u\[$C2\]@\[$C3\]\h\[$WHITE\]:\[$C4\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo )\$(parse_git_branch)\[$WHITE\]$\[$RESET\] "
+PS1="\[$C5\][\[${C1}\]\u\[$C2\]@\[$C3\]\h\[$WHITE\]:\[$C4\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo )\[$C7\]\$(parse_git_branch)\[$C5\]]\[$WHITE\]$\[$RESET\] "
+
 
