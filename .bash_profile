@@ -34,7 +34,9 @@ if [[ $OSTYPE = darwin* ]]; then
 		source `brew --prefix grc`/etc/grc.bashrc
 	fi
 elif [[ $OSTYPE = linux* ]]; then
-	if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+	if [ -f ~/.git-completion.bash ]; then
+		source ~/.git-completion.bash
+	elif [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
 		source /usr/local/etc/bash_completion.d/git-completion.bash
-	fi
+	fi		
 fi
