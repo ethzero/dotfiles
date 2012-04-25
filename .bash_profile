@@ -22,6 +22,7 @@ complete -o "nospace" -W "Finder Dock Mail Safari iTunes iCal Address\ Book Syst
 
 umask 0002
 export CLICOLOR=1;
+export GIT_PS1_SHOWDIRTYSTATE=1;
 
 if [[ $OSTYPE = darwin* ]]; then
 	if [ -f `brew --prefix`/Library/Contributions/brew_bash_completion.sh ]; then
