@@ -88,3 +88,15 @@ if has("autocmd")
 	" Treat .json files as .js
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 endif
+
+
+" Folkes magic :wq in insertmode
+function Wqtipper()
+    let x = confirm("Hey!\nDu bist im Insert-Mode!\n Willst du trotzdem :wq machen?"," &Ja \n &Nein ",1,1)
+    if x == 1
+        silent! wq
+    else
+        "???
+    endif
+endfun
+iab wq <bs><esc>:call Wqtipper()<CR>
