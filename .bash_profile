@@ -8,6 +8,7 @@ unset file
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
 shopt -s dotglob
+shopt -s hostcomplete
 
 # Prefer US English and use UTF-8
 export LC_ALL="en_US.UTF-8"
