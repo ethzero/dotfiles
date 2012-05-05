@@ -32,6 +32,7 @@ if [[ $OSTYPE = darwin* ]]; then
 	if [ -f `brew --prefix`/Library/Contributions/brew_bash_completion.sh ]; then
 		source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
 	fi
+	# Grab a copy here: https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
 	if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
 		source `brew --prefix`/etc/bash_completion.d/git-completion.bash
 	fi
