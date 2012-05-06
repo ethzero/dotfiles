@@ -44,5 +44,7 @@ elif [[ $OSTYPE = linux* ]]; then
 		source ~/.git-completion.bash
 	elif [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
 		source /usr/local/etc/bash_completion.d/git-completion.bash
+        elif [ -f /etc/bash_completion.d/git ]; then
+		source /etc/bash_completion.d/git
 	fi		
 fi
