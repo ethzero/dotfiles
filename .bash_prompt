@@ -53,4 +53,8 @@ export _pPATH
 export _pBRANCHSTATUS
 export _pTERMINATOR
 
-export PS1='\[$_pBRACE\][\[$_pUSER\]\u\[$_pSEPERATOR\]@\[$_pHOST\]\h\[$_pSEPERATOR\]:\[$_pPATH\]\w$(__git_ps1 "\[$_pSEPERATOR\]::\[$_pBRANCHSTATUS\]%s")\[$_pBRACE\]]\[$_pTERMINATOR\]$\[$_pRESET\] '
+if [ "\$(type -t __git_ps1)" ]; then
+	export PS1='\[$_pBRACE\][\[$_pUSER\]\u\[$_pSEPERATOR\]@\[$_pHOST\]\h\[$_pSEPERATOR\]:\[$_pPATH\]\w$(__git_ps1 "\[$_pSEPERATOR\]::\[$_pBRANCHSTATUS\]%s")\[$_pBRACE\]]\[$_pTERMINATOR\]$\[$_pRESET\] '
+else
+	export PS1='\[$_pBRACE\][\[$_pUSER\]\u\[$_pSEPERATOR\]@\[$_pHOST\]\h\[$_pSEPERATOR\]:\[$_pPATH\]\w\[$_pBRACE\]]\[$_pTERMINATOR\]$\[$_pRESET\] '
+fi
